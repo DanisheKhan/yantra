@@ -29,7 +29,7 @@ function App() {
       <Hero />
       <About />
       <Founders />
-      <div className="w-full h-[70vh]">
+      <div className="w-full h-[30vh]">
         <FlowingMenu items={menuItems} />
       </div>
       <Gallery />
