@@ -9,11 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   const menuItems = [
-    {
-      text: "About",
-      link: "#about",
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop"
-    },
+    
     {
       text: "Founders",
       link: "#founders",
@@ -32,7 +28,7 @@ function App() {
       <Hero />
       <About />
       <Founders />
-      <div className="w-full h-screen">
+      <div className="w-full h-[70vh]">
         <FlowingMenu items={menuItems} />
       </div>
       <Gallery />
