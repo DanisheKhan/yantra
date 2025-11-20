@@ -21,11 +21,10 @@ export const FollowerPointerCard = ({
   }, []);
 
   const handleMouseMove = (e) => {
-    if (rect) {
-      const scrollX = window.scrollX;
-      const scrollY = window.scrollY;
-      x.set(e.clientX - rect.left + scrollX);
-      y.set(e.clientY - rect.top + scrollY);
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      x.set(e.clientX - rect.left);
+      y.set(e.clientY - rect.top);
     }
   };
   const handleMouseLeave = () => {
