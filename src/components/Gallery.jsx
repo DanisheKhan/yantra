@@ -13,9 +13,9 @@ const images = [
 
 const Gallery = () => {
   return (
-    <div id="gallery" className="w-full bg-black py-20 px-4">
+    <div id="gallery" className="w-full bg-background py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold text-foreground text-center mb-16">
           Recent Works
         </h2>
         <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">

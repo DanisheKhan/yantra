@@ -4,7 +4,7 @@ import { ScrollVelocityRow } from './ui/scroll-based-velocity';
 
 const About = () => {
   return (
-    <div id="about" className="w-full bg-black py-20 px-4 md:px-8 flex flex-col items-center">
+    <div id="about" className="w-full bg-background py-20 px-4 md:px-8 flex flex-col items-center">
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <motion.div 
@@ -13,7 +13,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6 text-left"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             Bridging Local Creativity & Global Demand
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed">
@@ -40,10 +40,10 @@ const About = () => {
       </div>
       
       <div className="w-full mt-24 overflow-hidden">
-        <ScrollVelocityRow baseVelocity={-1} className="text-white font-bold text-6xl md:text-9xl tracking-tighter opacity-10 whitespace-nowrap">
+        <ScrollVelocityRow baseVelocity={-1} className="text-foreground font-bold text-6xl md:text-9xl tracking-tighter opacity-10 whitespace-nowrap">
           YANTRA FILMS • CINEMATIC EXCELLENCE • GLOBAL STORIES •&nbsp;
         </ScrollVelocityRow>
-        <ScrollVelocityRow baseVelocity={1} className="text-white font-bold text-6xl md:text-9xl tracking-tighter opacity-10 whitespace-nowrap mt-2">
+        <ScrollVelocityRow baseVelocity={1} className="text-foreground font-bold text-6xl md:text-9xl tracking-tighter opacity-10 whitespace-nowrap mt-2">
           INNOVATION • PASSION • STORYTELLING •&nbsp;
         </ScrollVelocityRow>
       </div>

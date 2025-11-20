@@ -10,7 +10,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
-      <div className="absolute right-0 top-0 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 bg-neutral-900/50" />
+      <div className="absolute right-0 top-0 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 bg-muted/50" />
     ),
   },
   {
@@ -21,7 +21,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <div className="absolute right-0 top-0 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 bg-neutral-900/50" />
+      <div className="absolute right-0 top-0 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 bg-muted/50" />
     ),
   },
   {
@@ -32,7 +32,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <div className="absolute right-0 top-0 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 bg-neutral-900/50" />
+      <div className="absolute right-0 top-0 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 bg-muted/50" />
     ),
   },
   {
@@ -43,16 +43,16 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
-      <div className="absolute right-0 top-0 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 bg-neutral-900/50" />
+      <div className="absolute right-0 top-0 h-[300px] w-[600px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105 bg-muted/50" />
     ),
   },
 ];
 
 const Services = () => {
   return (
-    <div className="w-full bg-black py-20 px-4">
+    <div className="w-full bg-background py-20 px-4">
       <div className="max-w-6xl mx-auto">
-         <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-16">
+         <h2 className="text-3xl md:text-5xl font-bold text-foreground text-center mb-16">
           Our Craft
         </h2>
         <BentoGrid>

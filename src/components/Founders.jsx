@@ -3,9 +3,9 @@ import { FollowerPointerCard } from './ui/following-pointer';
 
 const Founders = () => {
     return (
-        <div id="founders" className="w-full bg-black py-20 px-4">
+        <div id="founders" className="w-full bg-background py-20 px-4">
             <div className="max-w-6xl mx-auto">
-                <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground text-center mb-16">
                     Visionaries
                 </h2>
 
@@ -13,7 +13,7 @@ const Founders = () => {
                     {/* Anjali Bhushan */}
                     <FollowerPointerCard title="Anjali Bhushan" className="h-full">
                         <CardContainer className="inter-var h-full">
-                            <CardBody className="bg-zinc-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] h-full min-h-[600px] rounded-xl p-6 border flex flex-col">
+                            <CardBody className="bg-card relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] h-full min-h-[600px] rounded-xl p-6 border flex flex-col">
                                 <CardItem
                                     translateZ="50"
                                     className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -63,7 +63,7 @@ const Founders = () => {
                     {/* Anavi Bhushan Nugyal */}
                     <FollowerPointerCard title="Anavi Bhushan Nugyal" className="h-full">
                         <CardContainer className="inter-var h-full">
-                            <CardBody className="bg-zinc-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] h-full min-h-[600px] rounded-xl p-6 border flex flex-col">
+                            <CardBody className="bg-card relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] h-full min-h-[600px] rounded-xl p-6 border flex flex-col">
                                 <CardItem
                                     translateZ="50"
                                     className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -113,7 +113,7 @@ const Founders = () => {
                     {/* New Team Member */}
                     <FollowerPointerCard title="Team Member" className="h-full">
                         <CardContainer className="inter-var h-full">
-                            <CardBody className="bg-zinc-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] h-full min-h-[600px] rounded-xl p-6 border flex flex-col">
+                            <CardBody className="bg-card relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] h-full min-h-[600px] rounded-xl p-6 border flex flex-col">
                                 <CardItem
                                     translateZ="50"
                                     className="text-xl font-bold text-neutral-600 dark:text-white"

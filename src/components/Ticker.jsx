@@ -2,8 +2,8 @@ import { ScrollVelocityContainer, ScrollVelocityRow } from './ui/scroll-based-ve
 
 const Ticker = () => {
   return (
-    <div className="w-full py-12 bg-black border-y border-white/10 overflow-hidden">
-      <ScrollVelocityContainer className="text-white/20 font-bold text-6xl md:text-9xl uppercase tracking-tighter">
+    <div className="w-full py-12 bg-background border-y border-border overflow-hidden">
+      <ScrollVelocityContainer className="text-foreground/20 font-bold text-6xl md:text-9xl uppercase tracking-tighter">
         <ScrollVelocityRow baseVelocity={-2}>
           CINEMA • ART • CULTURE • INNOVATION • STORYTELLING •&nbsp;
         </ScrollVelocityRow>

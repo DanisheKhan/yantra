@@ -1,13 +1,21 @@
-import Beams from './Beams';
+
 import TextPressure from './TextPressure';
 import { HyperText } from './ui/hyper-text';
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black flex flex-col items-center justify-center">
-      {/* Background Beams */}
-      <div className="absolute inset-0 z-0 opacity-60">
-        <Beams />
+    <div className="relative w-full h-screen overflow-hidden bg-background flex flex-col items-center justify-center">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover scale-[1.35]"
+        >
+          <source src="/bgVideo.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Content */}
@@ -30,7 +38,7 @@ const Hero = () => {
         {/* Subtitle */}
         <div className="mt-4">
           <HyperText
-            className="text-white/80 text-lg md:text-2xl font-light tracking-widest"
+            className="text-white text-lg md:text-2xl font-light tracking-widest"
             duration={1200}
           >
             SHAPING THE FUTURE OF INDIAN CINEMA
