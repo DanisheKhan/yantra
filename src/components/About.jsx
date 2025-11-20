@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { BlurFade } from './ui/blur-fade';
+import { ScrollVelocityRow } from './ui/scroll-based-velocity';
 
 const About = () => {
   return (
@@ -36,6 +37,15 @@ const About = () => {
                 />
              </BlurFade>
         </div>
+      </div>
+      
+      <div className="w-full mt-24 overflow-hidden">
+        <ScrollVelocityRow baseVelocity={-1} className="text-white font-bold text-6xl md:text-9xl tracking-tighter opacity-10 whitespace-nowrap">
+          YANTRA FILMS • CINEMATIC EXCELLENCE • GLOBAL STORIES •&nbsp;
+        </ScrollVelocityRow>
+        <ScrollVelocityRow baseVelocity={1} className="text-white font-bold text-6xl md:text-9xl tracking-tighter opacity-10 whitespace-nowrap mt-2">
+          INNOVATION • PASSION • STORYTELLING •&nbsp;
+        </ScrollVelocityRow>
       </div>
     </div>
   );
