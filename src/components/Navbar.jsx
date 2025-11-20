@@ -10,17 +10,14 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 pointer-events-none">
-        <div className="pointer-events-auto">
-            <StaggeredMenu 
-                items={navItems} 
-                logoUrl="" // No logo for now, or use text
-                menuButtonColor="#ffffff"
-                openMenuButtonColor="#000000"
-                accentColor="#ffffff"
-            />
-        </div>
-    </div>
+    <StaggeredMenu 
+        items={navItems} 
+        logoUrl="" 
+        menuButtonColor="#ffffff"
+        openMenuButtonColor="#000000"
+        accentColor="#ffffff"
+        isFixed={true}
+    />
   );
 };
 
