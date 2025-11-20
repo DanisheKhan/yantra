@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <StaggeredMenu 
         items={navItems} 
-        logoUrl="" 
+        logoText="YANTRA"
         menuButtonColor="#ffffff"
         openMenuButtonColor="#000000"
         accentColor="#ffffff"

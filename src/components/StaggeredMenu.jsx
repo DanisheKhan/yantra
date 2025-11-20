@@ -6,6 +6,7 @@ export const Navbar = ({
   colors = ['#B19EEF', '#5227FF'],
   items = [],
   socialItems = [],
+  logoText,
   displaySocials = true,
   displayItemNumbering = true,
   className,
@@ -349,13 +350,17 @@ export const Navbar = ({
           <div
             className="sm-logo flex items-center select-none pointer-events-auto"
             aria-label="Logo">
-            <img
-              src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
-              alt="Logo"
-              className="sm-logo-img block h-8 w-auto object-contain"
-              draggable={false}
-              width={110}
-              height={24} />
+            {logoText ? (
+              <span className="text-white font-bold text-xl tracking-widest">{logoText}</span>
+            ) : (
+              <img
+                src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
+                alt="Logo"
+                className="sm-logo-img block h-8 w-auto object-contain"
+                draggable={false}
+                width={110}
+                height={24} />
+            )}
           </div>
 
           <button
