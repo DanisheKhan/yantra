@@ -38,7 +38,7 @@ const JourneyItem = ({ year, title, description, icon: Icon, index }) => {
           </span>
           <div className="relative z-10 pt-4">
             <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">{title}</h3>
-            <p className="text-base text-muted-foreground leading-relaxed text-justify group-hover:text-foreground transition-colors duration-300">{description}</p>
+            <p className="text-lg text-muted-foreground leading-relaxed text-justify group-hover:text-foreground transition-colors duration-300">{description}</p>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@ const About = () => {
       <Founders />
 
       {/* Our Philosophy */}
-      <div className="max-w-4xl mx-auto text-center mt-32 mb-32 relative">
+      <div className="max-w-4xl mx-auto text-center mt-4 mb-32 relative">
         <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full -z-10"></div>
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12 uppercase tracking-tighter">OUR PHILOSOPHY</h2>
         <p className="text-xl md:text-2xl text-muted-foreground italic font-light leading-relaxed ">
