@@ -6,7 +6,7 @@ const Founders = () => {
         <div id="founders" className="w-full bg-background py-20 px-4">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl md:text-5xl font-bold text-foreground text-center mb-16">
-                    Visionaries
+                   VISIONARIES
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
