@@ -1,9 +1,12 @@
 import Hero from '../components/Hero';
 import AboutSection from '../components/About';
 import Gallery from '../components/Gallery';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { InteractiveHoverButton } from '../components/ui/interactive-hover-button';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full">
       <Hero />
@@ -36,16 +39,16 @@ const Home = () => {
       {/* CTA Section */}
       <div className="py-20 px-4 bg-black text-center">
         <h2 className="text-3xl font-bold text-white mb-6">Ready to Create?</h2>
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Link to="/projects" className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <InteractiveHoverButton onClick={() => navigate('/projects')} className="w-64">
             Explore Projects
-          </Link>
-          <Link to="/investors" className="px-8 py-3 border border-white text-white font-bold rounded-full hover:bg-white/10 transition">
+          </InteractiveHoverButton>
+          <InteractiveHoverButton onClick={() => navigate('/investors')} className="w-64">
             For Investors
-          </Link>
-          <Link to="/contact" className="px-8 py-3 border border-white text-white font-bold rounded-full hover:bg-white/10 transition">
+          </InteractiveHoverButton>
+          <InteractiveHoverButton onClick={() => navigate('/contact')} className="w-64">
             Get in Touch
-          </Link>
+          </InteractiveHoverButton>
         </div>
       </div>
     </div>

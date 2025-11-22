@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { InteractiveHoverButton } from '../components/ui/interactive-hover-button';
 
 const ProjectDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   // Mock data - in a real app this would come from an API or data file
   const project = {
@@ -23,12 +24,12 @@ const ProjectDetail = () => {
       <div className="relative h-[60vh] md:h-[80vh] w-full bg-black flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10"></div>
         <img src={`https://source.unsplash.com/random/1920x1080?film,${id}`} alt="Backdrop" className="w-full h-full object-cover opacity-50" />
-        <div className="relative z-20 text-center px-4">
+        <div className="relative z-20 text-center px-4 flex flex-col items-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">{project.title}</h1>
-          <p className="text-xl md:text-2xl text-gray-300 italic">{project.tagline}</p>
-          <button className="mt-8 px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition">
+          <p className="text-xl md:text-2xl text-gray-300 italic mb-8">{project.tagline}</p>
+          <InteractiveHoverButton className="w-48">
             Watch Trailer
-          </button>
+          </InteractiveHoverButton>
         </div>
       </div>
 
@@ -73,20 +74,22 @@ const ProjectDetail = () => {
 
           <div className="bg-gray-900 p-8 rounded-2xl border border-white/10">
             <h3 className="text-xl font-bold text-white mb-6">Downloads</h3>
-            <button className="w-full py-3 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 transition mb-3">
-              Download EPK
-            </button>
-            <button className="w-full py-3 bg-transparent border border-white/20 text-white rounded-lg hover:bg-white/5 transition">
-              Press Assets
-            </button>
+            <div className="space-y-4 flex flex-col items-center">
+              <InteractiveHoverButton className="w-full">
+                Download EPK
+              </InteractiveHoverButton>
+              <InteractiveHoverButton className="w-full">
+                Press Assets
+              </InteractiveHoverButton>
+            </div>
           </div>
 
-          <div className="bg-primary/10 p-8 rounded-2xl border border-primary/20">
+          <div className="bg-primary/10 p-8 rounded-2xl border border-primary/20 flex flex-col items-center">
             <h3 className="text-xl font-bold text-primary mb-4">Interested in this project?</h3>
-            <p className="text-gray-400 mb-6 text-sm">Contact us for distribution rights or investment opportunities.</p>
-            <Link to="/contact" className="block w-full py-3 bg-primary text-white text-center font-bold rounded-lg hover:bg-primary/80 transition">
+            <p className="text-gray-400 mb-6 text-sm text-center">Contact us for distribution rights or investment opportunities.</p>
+            <InteractiveHoverButton onClick={() => navigate('/contact')} className="w-full">
               Get in Touch
-            </Link>
+            </InteractiveHoverButton>
           </div>
         </div>
       </div>

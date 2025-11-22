@@ -3,7 +3,7 @@ const Contact = () => {
     <div className="pt-32 min-h-screen bg-background px-4">
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <h1 className="text-5xl font-bold text-foreground mb-8">Get in Touch</h1>
+          <h1 className="text-5xl font-bold text-foreground mb-8 uppercase">Contact Us</h1>
           <p className="text-xl text-gray-400 mb-8">
             Whether you're an investor, creator, or press, we'd love to hear from you.
           </p>

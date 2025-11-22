@@ -2,10 +2,10 @@ import Founders from '../components/Founders';
 
 const About = () => {
   return (
-    <div className="pt-20 min-h-screen bg-background">
-      <div className="py-20 px-4 text-center">
-        <h1 className="text-5xl font-bold text-foreground mb-6">Our Story</h1>
-        <p className="max-w-3xl mx-auto text-gray-400 text-lg">
+    <div className="pt-32 min-h-screen bg-background px-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <h1 className="text-5xl font-bold text-foreground mb-8 uppercase">About Us</h1>
+        <p className="text-xl text-gray-400 mb-12">
           Yantra Films was founded with a vision to bridge the gap between local creativity and global demand.
         </p>
       </div>
