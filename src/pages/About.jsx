@@ -31,13 +31,15 @@ const JourneyItem = ({ year, title, description, icon: Icon, index }) => {
       </div>
 
       {/* Text Content */}
-      <div className={`w-full md:w-5/12 pl-16 md:pl-0 ${isEven ? 'md:text-right md:pr-12' : 'md:pl-12'}`}>
-        <div className="bg-card/30 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors duration-300 group">
-          <span className="text-4xl font-bold text-primary/20 absolute -top-6 select-none group-hover:text-primary/40 transition-colors duration-300">
+      <div className={`w-full md:w-5/12 pl-16 md:pl-0 ${isEven ? 'md:pr-12' : 'md:pl-12'} text-left`}>
+        <div className="relative bg-card/30 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-primary/50 hover:bg-white/5 hover:shadow-[0_0_30px_rgba(var(--primary),0.1)] transition-all duration-500 group">
+          <span className="text-6xl md:text-7xl font-bold text-foreground/5 absolute top-0 right-4 select-none group-hover:text-primary/20 transition-colors duration-500 z-0">
             {year}
           </span>
-          <h3 className="text-2xl font-bold text-white mb-2 mt-2">{title}</h3>
-          <p className="text-gray-400 leading-relaxed">{description}</p>
+          <div className="relative z-10 pt-4">
+            <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">{title}</h3>
+            <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{description}</p>
+          </div>
         </div>
       </div>
     </motion.div>
