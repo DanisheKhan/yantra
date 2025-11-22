@@ -38,7 +38,7 @@ const JourneyItem = ({ year, title, description, icon: Icon, index }) => {
           </span>
           <div className="relative z-10 pt-4">
             <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">{title}</h3>
-            <p className="text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{description}</p>
+            <p className="text-base text-muted-foreground leading-relaxed text-justify group-hover:text-foreground transition-colors duration-300">{description}</p>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ const About = () => {
         className="max-w-4xl mx-auto text-center"
       >
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 uppercase tracking-tighter">About Us</h1>
-        <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed text-justify">
           Yantra Films was founded with a vision to bridge the gap between local creativity and global demand. Born from a passion for storytelling, we have evolved into a global production house, crafting cinematic experiences that resonate with audiences worldwide.
         </p>
       </motion.div>
@@ -104,7 +104,7 @@ const About = () => {
       <div className="max-w-4xl mx-auto text-center mt-32 mb-32 relative">
         <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full -z-10"></div>
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12 uppercase tracking-tighter">OUR PHILOSOPHY</h2>
-        <p className="text-xl md:text-2xl text-muted-foreground italic font-light leading-relaxed">
+        <p className="text-xl md:text-2xl text-muted-foreground italic font-light leading-relaxed text-justify">
           "We believe that every story has a soul. Our mission is to unearth these narratives and present them to the world with cinematic excellence."
         </p>
       </div>

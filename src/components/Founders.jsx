@@ -52,7 +52,7 @@ const Founders = () => {
                                 </div>
                                 <CardItem
                                     translateZ="40"
-                                    className="text-neutral-400 text-sm mt-4 leading-relaxed flex-grow"
+                                    className="text-neutral-400 text-sm mt-4 leading-relaxed text-justify flex-grow"
                                 >
                                     With decades of industry experience, Anjali brings strong creative leadership, having collaborated on acclaimed international documentaries and major Indian films.
                                 </CardItem>
@@ -102,7 +102,7 @@ const Founders = () => {
                                 </div>
                                 <CardItem
                                     translateZ="40"
-                                    className="text-neutral-400 text-sm mt-4 leading-relaxed flex-grow"
+                                    className="text-neutral-400 text-sm mt-4 leading-relaxed text-justify flex-grow"
                                 >
                                     A multidisciplinary creative consultant and visual artist, Anavi adds fresh, contemporary vision through her expertise in visual development and modern narrative forms.
                                 </CardItem>
@@ -152,7 +152,7 @@ const Founders = () => {
                                 </div>
                                 <CardItem
                                     translateZ="40"
-                                    className="text-neutral-400 text-sm mt-4 leading-relaxed flex-grow"
+                                    className="text-neutral-400 text-sm mt-4 leading-relaxed text-justify flex-grow"
                                 >
                                     Description of the new team member goes here. Please provide the name, role, and bio for this card.
                                 </CardItem>
