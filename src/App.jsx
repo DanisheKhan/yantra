@@ -1,40 +1,40 @@
-import FlowingMenu from './components/FlowingMenu';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-
-import About from './components/About';
-import Founders from './components/Founders';
-
-import Gallery from './components/Gallery';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop'; // Need to create this
+
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Services from './pages/Services';
+import Investors from './pages/Investors';
+import News from './pages/News';
+import Press from './pages/Press';
+import Contact from './pages/Contact';
+import ClientHub from './pages/ClientHub';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
-  const menuItems = [
-    {
-      text: "Founders",
-      link: "#founders",
-      image: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400&auto=format&fit=crop"
-    },
-    {
-      text: "Gallery",
-      link: "#gallery",
-      image: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=400&auto=format&fit=crop"
-    },
-
-  ];
-
   return (
-    <div className="bg-background min-h-screen w-full text-foreground overflow-x-hidden font-sans">
-      <Navbar />
-      <Hero />
-      <About />
-      <Founders />
-      <div className="w-full h-[30vh]">
-        <FlowingMenu items={menuItems} />
+    <Router>
+      <ScrollToTop />
+      <div className="bg-background min-h-screen w-full text-foreground overflow-x-hidden font-sans">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/press" element={<Press />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/client-hub" element={<ClientHub />} />
+        </Routes>
+        <Footer />
       </div>
-      <Gallery />
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

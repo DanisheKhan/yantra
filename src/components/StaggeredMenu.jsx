@@ -1,4 +1,5 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 export const Navbar = ({
@@ -16,6 +17,7 @@ export const Navbar = ({
   changeMenuColorOnOpen = true,
   isFixed = false,
   accentColor = '#5227FF',
+  logoColor = '#ffffff',
   onMenuOpen,
   onMenuClose
 }) => {
@@ -361,7 +363,7 @@ export const Navbar = ({
             className="sm-logo flex items-center select-none pointer-events-auto"
             aria-label="Logo">
             {logoText ? (
-              <span className="text-white font-bold text-xl tracking-widest">{logoText}</span>
+              <span className="font-bold text-xl tracking-widest" style={{ color: open ? openMenuButtonColor : logoColor }}>{logoText}</span>
             ) : (
               <img
                 src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
@@ -380,6 +382,7 @@ export const Navbar = ({
             aria-expanded={open}
             aria-controls="staggered-menu-panel"
             onClick={toggleMenu}
+            style={{ color: open ? openMenuButtonColor : menuButtonColor }}
             type="button">
             <span
               ref={textWrapRef}
@@ -426,16 +429,31 @@ export const Navbar = ({
                   <li
                     className="sm-panel-itemWrap relative overflow-hidden leading-none"
                     key={it.label + idx}>
-                    <a
-                      className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]"
-                      href={it.link}
-                      aria-label={it.ariaLabel}
-                      data-index={idx + 1}>
-                      <span
-                        className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
-                        {it.label}
-                      </span>
-                    </a>
+                    {it.link.startsWith('/') ? (
+                      <Link
+                        to={it.link}
+                        className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]"
+                        onClick={toggleMenu}
+                        aria-label={it.ariaLabel}
+                        data-index={idx + 1}>
+                        <span
+                          className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
+                          {it.label}
+                        </span>
+                      </Link>
+                    ) : (
+                      <a
+                        className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]"
+                        href={it.link}
+                        onClick={toggleMenu}
+                        aria-label={it.ariaLabel}
+                        data-index={idx + 1}>
+                        <span
+                          className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
+                          {it.label}
+                        </span>
+                      </a>
+                    )}
                   </li>
                 ))
               ) : (
