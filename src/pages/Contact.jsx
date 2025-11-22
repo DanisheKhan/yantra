@@ -10,11 +10,11 @@ const Contact = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-foreground uppercase leading-tight">
             Get in <br /> <span className="text-primary">Touch</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-md">
+          <p className="text-xl text-gray-600 max-w-md">
             Whether you're an investor, creator, or press, we'd love to hear from you. Let's create something extraordinary together.
           </p>
           
-          <div className="space-y-6 text-lg text-gray-300 mt-12">
+          <div className="space-y-6 text-lg text-gray-700 mt-12">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -49,17 +49,17 @@ const Contact = () => {
           <form className="relative z-10 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400 ml-1">Name</label>
+                <label className="text-sm font-medium text-gray-300 ml-1">Name</label>
                 <input type="text" placeholder="John Doe" className="w-full p-4 bg-black/50 border border-white/10 rounded-xl text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400 ml-1">Email</label>
+                <label className="text-sm font-medium text-gray-300 ml-1">Email</label>
                 <input type="email" placeholder="john@example.com" className="w-full p-4 bg-black/50 border border-white/10 rounded-xl text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition" />
               </div>
             </div>
             
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-400 ml-1">Subject</label>
+              <label className="text-sm font-medium text-gray-300 ml-1">Subject</label>
               <select className="w-full p-4 bg-black/50 border border-white/10 rounded-xl text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition appearance-none">
                 <option>General Inquiry</option>
                 <option>Investor Relations</option>
@@ -69,7 +69,7 @@ const Contact = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-400 ml-1">Message</label>
+              <label className="text-sm font-medium text-gray-300 ml-1">Message</label>
               <textarea placeholder="Tell us about your project..." rows="5" className="w-full p-4 bg-black/50 border border-white/10 rounded-xl text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition resize-none"></textarea>
             </div>
 
