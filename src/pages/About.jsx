@@ -104,7 +104,7 @@ const About = () => {
       <div className="max-w-4xl mx-auto text-center mt-32 mb-32 relative">
         <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full -z-10"></div>
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12 uppercase tracking-tighter">OUR PHILOSOPHY</h2>
-        <p className="text-xl md:text-2xl text-muted-foreground italic font-light leading-relaxed text-justify">
+        <p className="text-xl md:text-2xl text-muted-foreground italic font-light leading-relaxed ">
           "We believe that every story has a soul. Our mission is to unearth these narratives and present them to the world with cinematic excellence."
         </p>
       </div>
