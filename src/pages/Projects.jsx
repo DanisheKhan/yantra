@@ -4,24 +4,49 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "../components/ui/canvas-reveal-effect";
 
 const Projects = () => {
+  const projects = [
+    { title: "Ishqa", type: "Film", id: "ishqa" },
+    { title: "Amaan", type: "Film", id: "amaan" },
+    { title: "Beyond Myth", type: "Documentary", link: "https://www.beyondmyth.com", external: true },
+    { title: "Art of Dreaming - The Last Aamchi", type: "Documentary", id: "art-of-dreaming" },
+    { title: "Kira", type: "Film", id: "kira" },
+    { title: "Biba Munda", type: "Film", id: "biba-munda" }
+  ];
+
   return (
     <div className="pt-32 min-h-screen bg-background px-4">
       <h1 className="text-5xl font-bold text-foreground text-center mb-12 uppercase">Our Projects</h1>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[1, 2, 3, 4, 5, 6].map((item) => (
-          <Link to={`/projects/${item}`} key={item} className="block">
-             <Card title={`Project ${item}`} icon={<ProjectIcon className="h-10 w-10 text-white" />}>
-              <CanvasRevealEffect
-                animationSpeed={3}
-                containerClassName="bg-black"
-                colors={[
-                  [82, 39, 255], // #5227FF
-                  [160, 124, 254], // Lighter purple
-                ]}
-                dotSize={2}
-              />
-            </Card>
-          </Link>
+        {projects.map((project, index) => (
+          project.external ? (
+            <a href={project.link} key={index} target="_blank" rel="noopener noreferrer" className="block">
+               <Card title={project.title} icon={<ProjectIcon className="h-10 w-10 text-white" />}>
+                <CanvasRevealEffect
+                  animationSpeed={3}
+                  containerClassName="bg-black"
+                  colors={[
+                    [82, 39, 255], // #5227FF
+                    [160, 124, 254], // Lighter purple
+                  ]}
+                  dotSize={2}
+                />
+              </Card>
+            </a>
+          ) : (
+            <Link to={`/projects/${project.id}`} key={index} className="block">
+               <Card title={project.title} icon={<ProjectIcon className="h-10 w-10 text-white" />}>
+                <CanvasRevealEffect
+                  animationSpeed={3}
+                  containerClassName="bg-black"
+                  colors={[
+                    [82, 39, 255], // #5227FF
+                    [160, 124, 254], // Lighter purple
+                  ]}
+                  dotSize={2}
+                />
+              </Card>
+            </Link>
+          )
         ))}
       </div>
     </div>

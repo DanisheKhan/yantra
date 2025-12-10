@@ -41,7 +41,7 @@ const Hero = () => {
             className="text-white text-lg md:text-2xl font-light tracking-widest"
             duration={1200}
           >
-            SHAPING THE FUTURE OF INDIAN CINEMA
+            WE ARE YANTRA
           </HyperText>
         </div>
       </div>

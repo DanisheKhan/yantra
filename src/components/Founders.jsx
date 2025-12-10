@@ -54,7 +54,7 @@ const Founders = () => {
                                     translateZ="40"
                                     className="text-neutral-400 text-sm mt-4 leading-relaxed text-justify flex-grow"
                                 >
-                                    With decades of industry experience, Anjali brings strong creative leadership, having collaborated on acclaimed international documentaries and major Indian films.
+                                    Filmmaker with international co-production & directing experience. Credits include: India’s Daughter (Oscar-nominated), My Home India, Smiling Woman of Banda. Worked with: BBC, DR, NHK, Indian government. Bollywood involvement: Kuch Kuch Hota Hai, Shivaay, Kabir Singh.
                                 </CardItem>
                             </CardBody>
                         </CardContainer>
@@ -104,33 +104,33 @@ const Founders = () => {
                                     translateZ="40"
                                     className="text-neutral-400 text-sm mt-4 leading-relaxed text-justify flex-grow"
                                 >
-                                    A multidisciplinary creative consultant and visual artist, Anavi adds fresh, contemporary vision through her expertise in visual development and modern narrative forms.
+                                    Multidisciplinary creative consultant & visual artist. Expertise: Visual development, Illustrative design, Digital art. Awards: Lincoln Laureate, Projects for Peace recipient. Experience with: Apricot Sky Entertainment, Viacom18 Studios. Role: Strengthens Yantra’s visual & emotional storytelling.
                                 </CardItem>
                             </CardBody>
                         </CardContainer>
                     </FollowerPointerCard>
 
-                    {/* New Team Member */}
-                    <FollowerPointerCard title="Team Member" className="h-full">
+                    {/* Meet Bros */}
+                    <FollowerPointerCard title="Meet Bros" className="h-full">
                         <CardContainer className="inter-var h-full">
                             <CardBody className="bg-card relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[22rem] h-full min-h-[600px] rounded-xl p-6 border flex flex-col">
                                 <CardItem
                                     translateZ="50"
                                     className="text-xl font-bold text-neutral-600 dark:text-white"
                                 >
-                                    MeetBros
+                                    Meet Bros
                                 </CardItem>
                                 <CardItem
                                     as="p"
                                     translateZ="60"
                                     className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
                                 >
-                                    Role
+                                    Musical Directors & Partners
                                 </CardItem>
                                 <CardItem translateZ="100" className="w-full mt-4 flex-grow-0">
                                     <img
                                         src="/Founders/imgi_6_width_799.webp"
-                                        alt="Team Member"
+                                        alt="Meet Bros"
                                         className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                                     />
                                 </CardItem>
@@ -140,25 +140,27 @@ const Founders = () => {
                                         as="div"
                                         className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                                     >
-                                        Expertise
+                                        Musical Visionaries
                                     </CardItem>
                                     <CardItem
                                         translateZ={20}
                                         as="div"
                                         className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                                     >
-                                        Role
+                                        Creative Partners
                                     </CardItem>
                                 </div>
                                 <CardItem
                                     translateZ="40"
                                     className="text-neutral-400 text-sm mt-4 leading-relaxed text-justify flex-grow"
                                 >
-                                    Description of the new team member goes here. Please provide the name, role, and bio for this card.
+                                    Acclaimed musical duo Manmeet and Harmeet Singh, known for redefining Bollywood music with hits like "Baby Doll" and "Chittiyaan Kalaiyaan". Recipients of Filmfare, IIFA, and Screen Awards. Established 'Meet Bros Recording Studio' and bring extensive entertainment industry experience to Yantra.
                                 </CardItem>
                             </CardBody>
                         </CardContainer>
                     </FollowerPointerCard>
+
+
                 </div>
             </div>
         </div>
