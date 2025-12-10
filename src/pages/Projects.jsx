@@ -96,19 +96,6 @@ const Projects = () => {
             with cutting-edge technology to craft narratives that resonate.
           </p>
         </section>
-
-        <section className="text-center space-y-8 bg-white/5 p-12 rounded-3xl border border-white/10 backdrop-blur-sm">
-          <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-wider">Ready to Collaborate?</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Whether you have a script ready for production or an idea waiting to be born, we are always looking 
-            for the next great story to tell. Let's create something extraordinary together.
-          </p>
-          <div className="pt-4">
-             <Link to="/contact" className="inline-block bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-neutral-200 transition-colors duration-300">
-                Start a Project
-             </Link>
-          </div>
-        </section>
       </div>
     </div>
   );
