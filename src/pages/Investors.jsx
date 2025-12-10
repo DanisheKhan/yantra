@@ -10,7 +10,7 @@ const Investors = () => {
           Access exclusive investment opportunities, financial structures, and project projections.
         </p>
         
-        <div className="relative bg-gray-900 p-8 rounded-2xl max-w-md mx-auto border border-white/10 overflow-hidden">
+        <div className="relative bg-neutral-900 p-8 rounded-2xl max-w-md mx-auto border border-white/10 overflow-hidden">
           <ShineBorder className="text-center text-2xl font-bold capitalize" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-white mb-6">Investor Login</h3>

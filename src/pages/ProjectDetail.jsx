@@ -1,35 +1,40 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { InteractiveHoverButton } from '../components/ui/interactive-hover-button';
+import { projects } from '../data/projects';
 
 const ProjectDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Mock data - in a real app this would come from an API or data file
-  const project = {
-    title: `Project ${id}`,
-    tagline: "A cinematic journey into the unknown.",
-    synopsis: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    director: "Jane Doe",
-    producer: "John Smith",
-    cast: ["Actor One", "Actor Two", "Actor Three"],
-    role: "Co-Production & Financing",
-    status: "Completed",
-    year: "2024"
-  };
+  const project = projects.find(p => p.id === id);
+
+  if (!project) {
+    return <div className="text-white text-center pt-32">Project not found</div>;
+  }
 
   return (
     <div className="w-full bg-background min-h-screen">
       {/* Hero / Trailer */}
       <div className="relative h-[60vh] md:h-[80vh] w-full bg-black flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
-        <img src={`https://source.unsplash.com/random/1920x1080?film,${id}`} alt="Backdrop" className="w-full h-full object-cover opacity-50" />
-        <div className="relative z-20 text-center px-4 flex flex-col items-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">{project.title}</h1>
-          <p className="text-xl md:text-2xl text-gray-300 italic mb-8">{project.tagline}</p>
-          <InteractiveHoverButton className="w-48">
-            Watch Trailer
-          </InteractiveHoverButton>
+        {project.videoUrl ? (
+          <video
+            src={project.videoUrl}
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          <>
+             <div className="absolute inset-0 bg-black/40 z-10"></div>
+             <img src={`https://source.unsplash.com/random/1920x1080?film,${id}`} alt="Backdrop" className="w-full h-full object-cover opacity-50" />
+          </>
+        )}
+       
+        <div className="absolute z-20 text-center px-4 flex flex-col items-center pointer-events-none">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">{project.title}</h1>
+          <p className="text-xl md:text-2xl text-gray-200 italic mb-8 drop-shadow-md">{project.tagline}</p>
         </div>
       </div>
 
@@ -52,15 +57,15 @@ const ProjectDetail = () => {
           <section>
             <h2 className="text-3xl font-bold text-foreground mb-6">Impact & Awards</h2>
             <div className="flex gap-4 flex-wrap">
-              <div className="bg-gray-900 px-6 py-3 rounded-full text-white border border-white/10">🏆 Best Picture - Local Fest</div>
-              <div className="bg-gray-900 px-6 py-3 rounded-full text-white border border-white/10">⭐ 4.5/5 Critic Score</div>
+              <div className="bg-neutral-900 px-6 py-3 rounded-full text-white border border-white/10">🏆 Best Picture - Local Fest</div>
+              <div className="bg-neutral-900 px-6 py-3 rounded-full text-white border border-white/10">⭐ 4.5/5 Critic Score</div>
             </div>
           </section>
         </div>
 
         {/* Sidebar */}
         <div className="space-y-8">
-          <div className="bg-gray-900 p-8 rounded-2xl border border-white/10">
+          <div className="bg-neutral-900 p-8 rounded-2xl border border-white/10">
             <h3 className="text-xl font-bold text-white mb-6">Project Details</h3>
             <div className="space-y-4 text-gray-400">
               <p><span className="text-white font-semibold">Director:</span> {project.director}</p>
@@ -72,7 +77,7 @@ const ProjectDetail = () => {
             </div>
           </div>
 
-          <div className="bg-gray-900 p-8 rounded-2xl border border-white/10">
+          <div className="bg-neutral-900 p-8 rounded-2xl border border-white/10">
             <h3 className="text-xl font-bold text-white mb-6">Downloads</h3>
             <div className="space-y-4 flex flex-col items-center">
               <InteractiveHoverButton className="w-full">

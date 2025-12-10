@@ -64,7 +64,7 @@ const Contact = () => {
 
         
         {/* Contact Form */}
-        <div className="relative bg-gray-900/50 p-8 rounded-3xl border border-white/10 overflow-hidden backdrop-blur-sm">
+        <div className="relative bg-neutral-900/50 p-8 rounded-3xl border border-white/10 overflow-hidden backdrop-blur-sm">
           <ShineBorder className="text-center text-2xl font-bold capitalize" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
           <form className="relative z-10 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
