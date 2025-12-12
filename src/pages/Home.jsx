@@ -1,52 +1,108 @@
+import React from 'react';
 import Hero from '../components/Hero';
 import AboutSection from '../components/About';
 import Gallery from '../components/Gallery';
 import { useNavigate } from 'react-router-dom';
 import { InteractiveHoverButton } from '../components/ui/interactive-hover-button';
+import { SpinningText } from "../components/ui/spinning-text";
+import { MaskContainer } from "../components/ui/svg-mask-effect";
+import { Clapperboard, Globe, Trophy, Users } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full">
-      <Hero />
+    <div className="w-full bg-gray-50 overflow-x-hidden">
+      
+      {/* Hero Wrapper with Spinning Text */}
+      <div className="relative w-full">
+        <Hero />
+        <div className="absolute top-24 right-10 md:top-32 md:right-20 z-20 hidden md:block opacity-60 mix-blend-difference">
+           <SpinningText
+            radius={5}
+            className="font-mono text-sm font-medium tracking-widest text-white"
+            duration={12}
+            reverse
+          >
+            YANTRA • EXPERIMENTAL • CINEMA • 
+          </SpinningText>
+        </div>
+      </div>
+
       <AboutSection />
+      
       <Gallery />
       
-      {/* Stats / Highlights Section - Placeholder for now */}
-      <div className="py-20 px-4 bg-background text-center">
-        <h2 className="text-3xl font-bold text-foreground mb-8">Our Impact</h2>
+      {/* Reveal Section - Global Impact */}
+      <div className="w-full h-[50vh] relative flex items-center justify-center overflow-hidden border-y border-gray-200 bg-white">
+        <MaskContainer
+            revealText={
+            <div className="flex flex-col items-center justify-center h-full space-y-4 p-4 text-center">
+                 <h3 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter">
+                    GLOBAL FOOTPRINT
+                 </h3>
+                 <p className="text-gray-400 font-mono text-sm tracking-widest uppercase">
+                    Beyond Borders
+                 </p>
+            </div>
+            }
+            className="h-full w-full bg-gray-50"
+        >
+            <div className="max-w-4xl mx-auto text-center text-white p-8">
+                 <div className="flex justify-center mb-6">
+                    <Globe className="w-12 h-12 text-white" />
+                </div>
+                <p className="text-3xl md:text-5xl font-light italic leading-tight">
+                    "From Mumbai to Los Angeles, our stories resonate across cultures, bridging gaps and creating a universal language of cinema."
+                </p>
+            </div>
+        </MaskContainer>
+      </div>
+
+      {/* Stats / Highlights Section */}
+      <div className="py-24 px-4 bg-white">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 uppercase tracking-tight">Our Impact</h2>
+            <div className="w-24 h-1 bg-gray-200 mx-auto rounded-full" />
+        </div>
+        
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <div>
-            <p className="text-4xl font-bold text-primary">10+</p>
-            <p className="text-gray-400">Films Produced</p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-primary">25+</p>
-            <p className="text-gray-400">Awards Won</p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-primary">5</p>
-            <p className="text-gray-400">Global Partners</p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-primary">3</p>
-            <p className="text-gray-400">Major Markets</p>
-          </div>
+           {[
+                { label: "Films Produced", value: "10+", icon: Clapperboard },
+                { label: "Awards Won", value: "25+", icon: Trophy },
+                { label: "Global Partners", value: "5", icon: Users },
+                { label: "Major Markets", value: "3", icon: Globe },
+           ].map((stat, idx) => (
+               <div key={idx} className="group p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg transition-all duration-300">
+                    <div className="mb-4 flex justify-center">
+                        <stat.icon className="w-8 h-8 text-gray-400 group-hover:text-gray-900 transition-colors" />
+                    </div>
+                    <p className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">{stat.value}</p>
+                    <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">{stat.label}</p>
+               </div>
+           ))}
         </div>
       </div>
 
       {/* CTA Section */}
-      <div className="py-20 px-4 bg-black text-center">
-        <h2 className="text-3xl font-bold text-white mb-6">Ready to Create?</h2>
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-          <InteractiveHoverButton onClick={() => navigate('/projects')} className="w-64">
-            Explore Projects
-          </InteractiveHoverButton>
-          <InteractiveHoverButton onClick={() => navigate('/contact')} className="w-64">
-            Get in Touch
-          </InteractiveHoverButton>
-        </div>
+      <div className="py-32 px-4 bg-gray-900 text-center relative overflow-hidden">
+         {/* Background Decoration */}
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-800 via-gray-900 to-black opacity-50" />
+         
+         <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+            <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">Ready to Create?</h2>
+            <p className="text-xl text-gray-400 font-light max-w-xl mx-auto">
+                Join us in crafting the next generation of cinematic experiences. whether you have a script, a vision, or a spark.
+            </p>
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-8">
+                <InteractiveHoverButton onClick={() => navigate('/projects')} className="w-64 bg-white text-black border-white hover:bg-gray-100">
+                    Explore Projects
+                </InteractiveHoverButton>
+                <InteractiveHoverButton onClick={() => navigate('/contact')} className="w-64 border-white text-white hover:bg-white hover:text-black">
+                    Get in Touch
+                </InteractiveHoverButton>
+            </div>
+         </div>
       </div>
     </div>
   );
