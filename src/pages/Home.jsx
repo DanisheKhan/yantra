@@ -71,20 +71,26 @@ const Home = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="py-32 px-4 bg-gray-900 text-center relative overflow-hidden">
+      <div className="py-32 px-4 bg-[#f9fafb] text-center relative overflow-hidden border-t border-gray-200">
          {/* Background Decoration */}
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-800 via-gray-900 to-black opacity-50" />
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-100 via-[#f9fafb] to-white opacity-50" />
          
          <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">Ready to Create?</h2>
-            <p className="text-xl text-gray-400 font-light max-w-xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tighter">Ready to Create?</h2>
+            <p className="text-xl text-gray-600 font-light max-w-xl mx-auto">
                 Join us in crafting the next generation of cinematic experiences. whether you have a script, a vision, or a spark.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-8">
-                <InteractiveHoverButton onClick={() => navigate('/projects')} className="w-64 bg-white text-black border-white hover:bg-gray-100">
+                <InteractiveHoverButton 
+                    onClick={() => navigate('/projects')} 
+                    className="w-64 bg-gray-900 text-white border-gray-900 hover:bg-gray-800 [&>div:last-child]:text-gray-900"
+                >
                     Explore Projects
                 </InteractiveHoverButton>
-                <InteractiveHoverButton onClick={() => navigate('/contact')} className="w-64 border-white text-white hover:bg-white hover:text-black">
+                <InteractiveHoverButton 
+                    onClick={() => navigate('/contact')} 
+                    className="w-64 bg-transparent text-gray-900 border-2 border-gray-900 hover:bg-gray-900 hover:text-white [&>div:last-child]:group-hover:text-gray-900"
+                >
                     Get in Touch
                 </InteractiveHoverButton>
             </div>
