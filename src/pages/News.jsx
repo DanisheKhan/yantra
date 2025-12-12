@@ -4,6 +4,7 @@ import { SpinningText } from "../components/ui/spinning-text";
 import { MaskContainer } from "../components/ui/svg-mask-effect";
 import { ArrowRight, Calendar, Tag, Newspaper } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { SlideIn } from "../components/Reveal";
 
 const News = () => {
     const newsData = [
@@ -53,15 +54,21 @@ const News = () => {
         </div>
         
         <div className="z-10 max-w-4xl mx-auto space-y-8">
-            <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-xs font-medium uppercase tracking-wider mb-4">
-                Latest Updates
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-tight">
-                Stories in <span className="text-gray-400">Motion</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
-                Keep up with the latest production updates, festival runs, and corporate announcements from Yantra Films.
-            </p>
+            <SlideIn delay={0.1} direction="down">
+              <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-xs font-medium uppercase tracking-wider mb-4">
+                  Latest Updates
+              </div>
+            </SlideIn>
+            <SlideIn delay={0.2}>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-tight">
+                  Stories in <span className="text-gray-400">Motion</span>
+              </h1>
+            </SlideIn>
+            <SlideIn delay={0.3}>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
+                  Keep up with the latest production updates, festival runs, and corporate announcements from Yantra Films.
+              </p>
+            </SlideIn>
         </div>
       </div>
 

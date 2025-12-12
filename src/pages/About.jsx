@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { SpinningText } from "../components/ui/spinning-text";
 import { MaskContainer } from "../components/ui/svg-mask-effect";
+import { SlideIn } from "../components/Reveal";
 import { 
   Film, 
   Globe as GlobeIcon, 
@@ -104,16 +105,22 @@ const About = () => {
         </div>
         
         <div className="z-10 max-w-4xl mx-auto space-y-8">
-            <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-xs font-medium uppercase tracking-wider mb-4">
-                Our Story
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-tight">
-                Crafting <span className="text-gray-400">Cinematic</span> <br />
-                Legacies
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
-                Yantra Films was founded with a vision to bridge the gap between local creativity and global demand.
-            </p>
+            <SlideIn delay={0.1} direction="down">
+              <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-xs font-medium uppercase tracking-wider mb-4">
+                  Our Story
+              </div>
+            </SlideIn>
+            <SlideIn delay={0.2}>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-tight">
+                  Crafting <span className="text-gray-400">Cinematic</span> <br />
+                  Legacies
+              </h1>
+            </SlideIn>
+            <SlideIn delay={0.3}>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
+                  Yantra Films was founded with a vision to bridge the gap between local creativity and global demand.
+              </p>
+            </SlideIn>
         </div>
       </div>
 
@@ -122,37 +129,43 @@ const About = () => {
         <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Vision */}
-                <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
-                    <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                        <Target className="w-6 h-6 text-gray-700 group-hover:text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Vision</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                        To become a global nexus for storytelling, where diverse narratives find their voice and reach audiences across the world without compromise.
-                    </p>
-                </div>
+                <SlideIn delay={0.2}>
+                  <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group h-full">
+                      <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
+                          <Target className="w-6 h-6 text-gray-700 group-hover:text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Vision</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                          To become a global nexus for storytelling, where diverse narratives find their voice and reach audiences across the world without compromise.
+                      </p>
+                  </div>
+                </SlideIn>
 
                 {/* Mission */}
-                <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
-                     <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                        <Lightbulb className="w-6 h-6 text-gray-700 group-hover:text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Mission</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                        Unearthing stories with a soul and presenting them with cinematic excellence. We strive to push the boundaries of creativity and technology.
-                    </p>
-                </div>
+                <SlideIn delay={0.3}>
+                  <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group h-full">
+                       <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
+                          <Lightbulb className="w-6 h-6 text-gray-700 group-hover:text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Mission</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                          Unearthing stories with a soul and presenting them with cinematic excellence. We strive to push the boundaries of creativity and technology.
+                      </p>
+                  </div>
+                </SlideIn>
 
                 {/* Values */}
-                <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
-                     <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                        <Users className="w-6 h-6 text-gray-700 group-hover:text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Values</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                        Collaboration, integrity, and a relentless pursuit of quality. We believe in the power of shared creativity to change perspectives.
-                    </p>
-                </div>
+                <SlideIn delay={0.4}>
+                  <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group h-full">
+                       <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
+                          <Users className="w-6 h-6 text-gray-700 group-hover:text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Values</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                          Collaboration, integrity, and a relentless pursuit of quality. We believe in the power of shared creativity to change perspectives.
+                      </p>
+                  </div>
+                </SlideIn>
             </div>
         </div>
       </div>

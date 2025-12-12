@@ -3,6 +3,7 @@ import { Globe } from "../components/ui/globe";
 import { SpinningText } from "../components/ui/spinning-text";
 import { MaskContainer } from "../components/ui/svg-mask-effect";
 import { Button } from "../components/ui/button";
+import { SlideIn } from "../components/Reveal";
 import { 
   ArrowRight, 
   Film, 
@@ -35,16 +36,22 @@ const Services = () => {
         </div>
         
         <div className="z-10 max-w-4xl mx-auto space-y-8">
-            <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-xs font-medium uppercase tracking-wider mb-4">
-                Global Cinema Infrastructure
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-tight">
-                Empowering <span className="text-gray-400">Visionaries</span> <br />
-                Across Borders
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
-                We provide the structural foundations for groundbreaking cinema, from creative conception to global screens.
-            </p>
+            <SlideIn delay={0.1} direction="down">
+              <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-xs font-medium uppercase tracking-wider mb-4">
+                  Global Cinema Infrastructure
+              </div>
+            </SlideIn>
+            <SlideIn delay={0.2}>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-tight">
+                  Empowering <span className="text-gray-400">Visionaries</span> <br />
+                  Across Borders
+              </h1>
+            </SlideIn>
+            <SlideIn delay={0.3}>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
+                  We provide the structural foundations for groundbreaking cinema, from creative conception to global screens.
+              </p>
+            </SlideIn>
 
         </div>
       </div>
@@ -54,13 +61,15 @@ const Services = () => {
         <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row gap-12 items-center">
                 <div className="md:w-1/3">
-                     <h2 className="text-4xl font-bold mb-6 tracking-tight text-gray-900">Content Creation</h2>
-                     <p className="text-xl text-gray-600 leading-relaxed font-light mb-8">
-                        Our formats cover both creative and commercial storytelling needs, producing a wide range of content across multiple platforms.
-                     </p>
-                     <div className="inline-flex items-center text-sm font-semibold text-gray-900 border-b border-gray-900 pb-1">
-                        Multimedia Capabilities
-                     </div>
+                     <SlideIn delay={0.2} direction="left">
+                       <h2 className="text-4xl font-bold mb-6 tracking-tight text-gray-900">Content Creation</h2>
+                       <p className="text-xl text-gray-600 leading-relaxed font-light mb-8">
+                          Our formats cover both creative and commercial storytelling needs, producing a wide range of content across multiple platforms.
+                       </p>
+                       <div className="inline-flex items-center text-sm font-semibold text-gray-900 border-b border-gray-900 pb-1">
+                          Multimedia Capabilities
+                       </div>
+                     </SlideIn>
                 </div>
                 <div className="md:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
@@ -72,10 +81,12 @@ const Services = () => {
                         { icon: Clapperboard, label: "Fashion Films" },
                         { icon: GlobeIcon, label: "Documentaries" },
                     ].map((item, idx) => (
-                        <div key={idx} className="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors border border-gray-100">
-                            <item.icon className="w-8 h-8 mb-3 text-gray-700" strokeWidth={1.5} />
-                            <span className="text-sm font-medium text-gray-900 text-center">{item.label}</span>
-                        </div>
+                        <SlideIn key={idx} delay={0.1 * idx} direction="up">
+                          <div className="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors border border-gray-100 h-full">
+                              <item.icon className="w-8 h-8 mb-3 text-gray-700" strokeWidth={1.5} />
+                              <span className="text-sm font-medium text-gray-900 text-center">{item.label}</span>
+                          </div>
+                        </SlideIn>
                     ))}
                 </div>
             </div>
@@ -85,45 +96,53 @@ const Services = () => {
       {/* Production & Business Models Grid */}
       <div className="py-24 bg-gray-50 px-4">
         <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">Production & Business Models</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">
-                    Flexible production models designed to adapt to the unique needs of every project.
-                </p>
-            </div>
+            <SlideIn direction="up">
+              <div className="text-center mb-16">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">Production & Business Models</h2>
+                  <p className="text-gray-600 max-w-2xl mx-auto">
+                      Flexible production models designed to adapt to the unique needs of every project.
+                  </p>
+              </div>
+            </SlideIn>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Card 1 */}
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden">
-                    <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
-                        <Clapperboard className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">In-House Production</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
-                        Complete project execution from concept to final output. We handle every aspect of the physical workspace and creative process.
-                    </p>
-                </div>
+                <SlideIn delay={0.2}>
+                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden h-full">
+                      <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
+                          <Clapperboard className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">In-House Production</h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
+                          Complete project execution from concept to final output. We handle every aspect of the physical workspace and creative process.
+                      </p>
+                  </div>
+                </SlideIn>
 
                 {/* Card 2 */}
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden">
-                     <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
-                        <Handshake className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Acquisitions</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
-                        Buying or partnering on promising content. We identify high-potential projects and bring them into the Yantra ecosystem.
-                    </p>
-                </div>
+                <SlideIn delay={0.3}>
+                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden h-full">
+                       <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
+                          <Handshake className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Acquisitions</h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
+                          Buying or partnering on promising content. We identify high-potential projects and bring them into the Yantra ecosystem.
+                      </p>
+                  </div>
+                </SlideIn>
 
                 {/* Card 3 */}
-                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden">
-                     <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
-                        <Users className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Co-Production</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
-                        Collaborating with other studios or creators to share creative and financial responsibilities, fostering global storytelling.
-                    </p>
-                </div>
+                <SlideIn delay={0.4}>
+                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden h-full">
+                       <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
+                          <Users className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Co-Production</h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
+                          Collaborating with other studios or creators to share creative and financial responsibilities, fostering global storytelling.
+                      </p>
+                  </div>
+                </SlideIn>
             </div>
         </div>
       </div>

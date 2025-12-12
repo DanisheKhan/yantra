@@ -5,6 +5,7 @@ import { CanvasRevealEffect } from "../components/ui/canvas-reveal-effect";
 import { SpinningText } from "../components/ui/spinning-text";
 import { MaskContainer } from "../components/ui/svg-mask-effect";
 import { Clapperboard } from "lucide-react";
+import { SlideIn } from "../components/Reveal";
 
 import { projects } from "../data/projects";
 
@@ -25,16 +26,22 @@ const Projects = () => {
         </div>
         
         <div className="z-10 max-w-4xl mx-auto space-y-8">
-            <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-xs font-medium uppercase tracking-wider mb-4">
-                Our Portfolio
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-tight">
-                Cinematic <span className="text-gray-400">Frontiers</span> <br />
-                Unleashed
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
-                Exploring boundaries through compelling storytelling and visual artistry. Discover our portfolio of feature films that resonate worldwide.
-            </p>
+            <SlideIn delay={0.1} direction="down">
+              <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-gray-200 text-gray-700 text-xs font-medium uppercase tracking-wider mb-4">
+                  Our Portfolio
+              </div>
+            </SlideIn>
+            <SlideIn delay={0.2}>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-tight">
+                  Cinematic <span className="text-gray-400">Frontiers</span> <br />
+                  Unleashed
+              </h1>
+            </SlideIn>
+            <SlideIn delay={0.3}>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
+                  Exploring boundaries through compelling storytelling and visual artistry. Discover our portfolio of feature films that resonate worldwide.
+              </p>
+            </SlideIn>
         </div>
       </div>
       

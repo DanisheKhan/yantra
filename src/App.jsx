@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop'; // Need to create this
+import PageTransition from './components/PageTransition';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -15,26 +16,29 @@ import ClientHub from './pages/ClientHub';
 import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
-  return (
-    <Router>
-      <ScrollToTop />
-      <div className="bg-background min-h-screen w-full text-foreground overflow-x-hidden font-sans">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
-          <Route path="/services" element={<Services />} />
+  const location = useLocation();
 
-          <Route path="/news" element={<News />} />
-          <Route path="/press" element={<Press />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/client-hub" element={<ClientHub />} />
-        </Routes>
+  return (
+    <>
+      <div className="bg-background min-h-screen w-full text-foreground overflow-x-hidden font-sans flex flex-col">
+        <Navbar />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+            <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+            <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
+            <Route path="/projects/:id" element={<PageTransition><ProjectDetail /></PageTransition>} />
+            <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+
+            <Route path="/news" element={<PageTransition><News /></PageTransition>} />
+            <Route path="/press" element={<PageTransition><Press /></PageTransition>} />
+            <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+            <Route path="/client-hub" element={<PageTransition><ClientHub /></PageTransition>} />
+          </Routes>
+        </AnimatePresence>
         <Footer />
       </div>
-    </Router>
+    </>
   );
 }
 
