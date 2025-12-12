@@ -33,7 +33,7 @@ export const MaskContainer = ({
       ref={containerRef}
       className={cn("relative h-screen", className)}
       animate={{
-        backgroundColor: isHovered ? "#0f172a" : "#ffffff",
+        backgroundColor: isHovered ? "#f9fafb" : "#ffffff",
       }}
       transition={{
         backgroundColor: { duration: 0.3 },
