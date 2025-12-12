@@ -6,9 +6,8 @@ import { CanvasRevealEffect } from "../components/ui/canvas-reveal-effect";
 import { projects } from "../data/projects";
 
 const Projects = () => {
-
   return (
-    <div className="pt-32 min-h-screen bg-background px-4">
+    <div className="pt-32 min-h-screen bg-background px-4 pb-20">
       <h1 className="text-5xl font-bold text-foreground text-center mb-6 uppercase tracking-tight">Our Projects</h1>
       <div className="max-w-3xl mx-auto text-center mb-16 px-4">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -17,71 +16,10 @@ const Projects = () => {
           that push the boundaries of imagination.
         </p>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
         {projects.map((project, index) => (
-          project.external ? (
-            <a href={project.link} key={index} target="_blank" rel="noopener noreferrer" className="block">
-               <Card title={project.title}>
-                 {project.videoUrl ? (
-                    <video
-                      src={project.videoUrl}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
-                 ) : project.imageUrl ? (
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                 ) : (
-                    <CanvasRevealEffect
-                      animationSpeed={3}
-                      containerClassName="bg-black"
-                      colors={[
-                        [82, 39, 255], // #5227FF
-                        [160, 124, 254], // Lighter purple
-                      ]}
-                      dotSize={2}
-                    />
-                 )}
-              </Card>
-            </a>
-          ) : (
-            <Link to={`/projects/${project.id}`} key={index} className="block">
-               <Card title={project.title}>
-                 {project.videoUrl ? (
-                    <video
-                      src={project.videoUrl}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
-                 ) : project.imageUrl ? (
-                     <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                 ) : (
-                    <CanvasRevealEffect
-                      animationSpeed={3}
-                      containerClassName="bg-black"
-                      colors={[
-                        [82, 39, 255], // #5227FF
-                        [160, 124, 254], // Lighter purple
-                      ]}
-                      dotSize={2}
-                    />
-                 )}
-              </Card>
-            </Link>
-          )
+          <BentoGridItem key={index} project={project} index={index} />
         ))}
       </div>
 
@@ -101,27 +39,91 @@ const Projects = () => {
   );
 };
 
-const Card = ({ title, children }) => {
+const BentoGridItem = ({ project, index }) => {
+  const getGridClass = (i) => {
+    // Pattern for 4-column grid
+    // 0: Big item (2x2)
+    // 1, 2: Stacked next to it? Or flowing.
+    // Let's force a nice layouts
+    const classes = [
+      "md:col-span-2 md:row-span-2", // 0: Large feature
+      "md:col-span-1 md:row-span-1", // 1
+      "md:col-span-1 md:row-span-1", // 2
+      "md:col-span-2 md:row-span-1", // 3: Wide
+      "md:col-span-1 md:row-span-1", // 4
+      "md:col-span-1 md:row-span-2", // 5: Tall
+      "md:col-span-2 md:row-span-2", // 6: Large feature
+      "md:col-span-2 md:row-span-1", // 7
+      "md:col-span-2 md:row-span-1", // 8
+    ];
+    return classes[i % classes.length] || "md:col-span-1 md:row-span-1";
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className={`group/bento row-span-1 rounded-xl hover:shadow-xl transition duration-200 shadow-input dark:shadow-none bg-transparent border border-white/10 justify-between flex flex-col space-y-4 ${getGridClass(index)}`}
+    >
+      {project.external ? (
+        <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+           <Card project={project} />
+        </a>
+      ) : (
+        <Link to={`/projects/${project.id}`} className="block w-full h-full">
+           <Card project={project} />
+        </Link>
+      )}
+    </motion.div>
+  );
+};
+
+const Card = ({ project }) => {
   return (
     <div
-      className="border border-white/5 flex items-center justify-center w-full mx-auto relative aspect-video bg-neutral-900 rounded-xl overflow-hidden group/canvas-card shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:border-white/20"
+      className="w-full h-full relative overflow-hidden rounded-xl group/card"
     >
       <div className="absolute inset-0">
-         <div className="h-full w-full absolute inset-0">
-           {children}
-         </div>
-         {/* Gradient Overlay for Text Visibility */}
-         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+          {project.videoUrl ? (
+            <video
+              src={project.videoUrl}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ) : project.imageUrl ? (
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+            />
+          ) : (
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-transparent"
+              colors={[
+                [82, 39, 255], 
+                [160, 124, 254], 
+              ]}
+              dotSize={2}
+            />
+          )}
+          {/* Enhanced Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover/card:opacity-60 transition-opacity duration-300" />
       </div>
 
-      <div className="relative z-20 text-center pointer-events-none mt-auto h-full flex flex-col justify-end pb-6 px-4">
-        <h2 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-widest relative z-10 drop-shadow-xl font-sans">
-          {title}
+      <div className="relative z-20 h-full flex flex-col justify-end p-6 select-none">
+        <h2 className="text-white text-2xl font-bold uppercase tracking-wider mb-2 drop-shadow-md group-hover/card:translate-x-1 transition-transform duration-300">
+          {project.title}
         </h2>
-         <div className="w-12 h-1 bg-white/50 mx-auto mt-3 mb-2 rounded-full group-hover/canvas-card:bg-white/80 transition-colors duration-300" />
-         <p className="text-gray-300 text-xs font-semibold tracking-wider relative z-10 uppercase drop-shadow-md opacity-80 group-hover/canvas-card:opacity-100 transition-opacity duration-300">
-            Click to view details
-         </p>
+        {project.tagline && (
+           <p className="text-gray-300 text-sm font-medium line-clamp-2 opacity-0 group-hover/card:opacity-100 transform translate-y-4 group-hover/card:translate-y-0 transition-all duration-300">
+             {project.tagline}
+           </p>
+        )}
       </div>
     </div>
   );
