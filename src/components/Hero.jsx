@@ -14,7 +14,7 @@ const Hero = () => {
           playsInline
           className="w-full h-full object-cover scale-[1.35]"
         >
-          <source src="/bgVideo.mp4" type="video/mp4" />
+          <source src="/bgVideo.webm" type="video/webm" />
         </video>
         {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10 pointer-events-none" />
