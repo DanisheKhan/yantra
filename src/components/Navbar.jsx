@@ -20,7 +20,8 @@ const Navbar = () => {
         logoText="YANTRA"
         menuButtonColor={isDarkHeader ? "#ffffff" : "#000000"}
         openMenuButtonColor="#000000"
-        accentColor="#5227FF"
+        accentColor="#6b7280"
+        colors={["#d1d5db", "#9ca3af", "#4b5563", "#111827"]}
         logoColor={isDarkHeader ? "#ffffff" : "#000000"}
         isFixed={true}
     />

@@ -18,6 +18,7 @@ export const Navbar = ({
   isFixed = false,
   accentColor = '#5227FF',
   logoColor = '#ffffff',
+  middleContent,
   onMenuOpen,
   onMenuClose
 }) => {
@@ -366,7 +367,7 @@ export const Navbar = ({
         )}
 
         <header
-          className={`staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20 transition-all duration-300 ${scrolled ? 'scrolled' : ''}`}
+          className={`staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between px-8 py-6 bg-transparent pointer-events-none z-20 transition-all duration-500 ease-in-out ${scrolled ? 'scrolled py-4' : ''}`}
           aria-label="Main navigation header">
           <Link
             to="/"
@@ -384,6 +385,12 @@ export const Navbar = ({
                 height={24} />
             )}
           </Link>
+
+          {middleContent && (
+            <div className="hidden lg:flex items-center justify-center flex-1 pointer-events-auto">
+              {middleContent}
+            </div>
+          )}
 
           <button
             ref={toggleBtnRef}
@@ -509,8 +516,8 @@ export const Navbar = ({
       </div>
       <style>{`
 .sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; z-index: 40; }
-.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 2em; background: transparent; pointer-events: none; z-index: 20; transition: background 0.3s ease, backdrop-filter 0.3s ease; }
-.sm-scope .staggered-menu-header.scrolled { background: rgba(0,0,0,0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 2em; background: transparent; pointer-events: none; z-index: 20; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.sm-scope .staggered-menu-header.scrolled { background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
 .sm-scope .staggered-menu-wrapper[data-open] .staggered-menu-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: transparent; }
 .sm-scope .staggered-menu-header > * { pointer-events: auto; }
 .sm-scope .sm-logo { display: flex; align-items: center; user-select: none; }
