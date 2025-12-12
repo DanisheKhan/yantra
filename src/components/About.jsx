@@ -14,7 +14,7 @@ const About = () => {
           className="space-y-6 text-left"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Bridging Local Creativity & Global Demand
+            Local Creativity, Global Demand
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed text-justify">
             Yantra Films is a dynamic, forward-thinking content house founded by Anjali Bhushan and Anavi Bhushan Nugyal.
