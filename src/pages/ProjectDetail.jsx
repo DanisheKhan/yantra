@@ -71,19 +71,17 @@ const ProjectDetail = () => {
 
           <section>
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-1.5 h-10 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.5)]" />
+              <div className="w-1.5 h-10 bg-red-600 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.5)]" />
               <h2 className="text-2xl md:text-3xl font-bold text-foreground uppercase tracking-wider">Impact & Recognition</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-neutral-900 dark:to-neutral-800/50 px-8 py-6 rounded-xl border border-amber-500/30 hover:border-amber-500/50 transition-all duration-300 shadow-lg group">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🏆</div>
-                <h3 className="text-amber-600 dark:text-amber-500 font-bold uppercase tracking-wider mb-1 text-sm">Award Winner</h3>
-                <span className="font-semibold text-xl text-foreground">Best Picture - Local Fest</span>
+              <div className="bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-xl p-8 rounded-2xl border border-neutral-200 dark:border-white/5 shadow-lg">
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-2">Award Winner</h3>
+                <p className="font-semibold text-xl text-foreground">Best Picture - Local Fest</p>
               </div>
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-neutral-900 dark:to-neutral-800/50 px-8 py-6 rounded-xl border border-amber-500/30 hover:border-amber-500/50 transition-all duration-300 shadow-lg group">
-                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">⭐</div>
-                 <h3 className="text-amber-600 dark:text-amber-500 font-bold uppercase tracking-wider mb-1 text-sm">Critical Acclaim</h3>
-                <span className="font-semibold text-xl text-foreground">4.5/5 Critic Score</span>
+              <div className="bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-xl p-8 rounded-2xl border border-neutral-200 dark:border-white/5 shadow-lg">
+                <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-2">Critical Acclaim</h3>
+                <p className="font-semibold text-xl text-foreground">4.5/5 Critic Score</p>
               </div>
             </div>
           </section>

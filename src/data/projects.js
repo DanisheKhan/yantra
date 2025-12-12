@@ -97,5 +97,19 @@ export const projects = [
     year: "1998",
     videoUrl: "/Projects/Triangle Gallery - Kuch Kuch Hota Hai Official Trailer ｜ Shah Rukh Khan, Kajol, Rani Mukerji.webm",
   },
+  {
+    id: "housefull-5",
+    title: "Housefull 5",
+    type: "Film",
+    tagline: "The madness continues",
+    synopsis: "The fifth installment of the Housefull franchise brings back the signature comedy and chaos with an ensemble cast. Get ready for a roller-coaster ride of laughter, confusion, and entertainment as the Housefull family returns with more madness and mayhem.",
+    director: "Tarun Mansukhani",
+    producer: "Sajid Nadiadwala",
+    cast: ["Akshay Kumar", "Riteish Deshmukh", "Abhishek Bachchan", "Jacqueline Fernandez", "Nargis Fakhri"],
+    role: "Production Services",
+    status: "Upcoming",
+    year: "2025",
+    videoUrl: "/Projects/Housefull 5  Official Trailer  Sajid Nadiadwala  Tarun Mansukhani  In Cinemas on 6th June 2025.mp4",
+  },
    
 ];
