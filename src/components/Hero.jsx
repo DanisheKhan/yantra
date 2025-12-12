@@ -16,6 +16,8 @@ const Hero = () => {
         >
           <source src="/bgVideo.mp4" type="video/mp4" />
         </video>
+        {/* Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10 pointer-events-none" />
       </div>
 
       {/* Content */}
