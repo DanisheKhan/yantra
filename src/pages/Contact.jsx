@@ -11,7 +11,7 @@ const Contact = () => {
             Get in <br /> <span className="text-primary">Touch</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-md">
-            Whether you're an investor, creator, or press, we'd love to hear from you. Let's create something extraordinary together.
+            Whether you're a creator or press, we'd love to hear from you. Let's create something extraordinary together.
           </p>
           
           <div className="space-y-6 text-lg text-gray-700 mt-12">
@@ -82,7 +82,6 @@ const Contact = () => {
               <label className="text-sm font-medium text-gray-300 ml-1">Subject</label>
               <select className="w-full p-4 bg-black/50 border border-white/10 rounded-xl text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition appearance-none">
                 <option>General Inquiry</option>
-                <option>Investor Relations</option>
                 <option>Press & Media</option>
                 <option>Careers</option>
               </select>

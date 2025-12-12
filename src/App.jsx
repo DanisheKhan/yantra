@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Services from './pages/Services';
-import Investors from './pages/Investors';
+
 import News from './pages/News';
 import Press from './pages/Press';
 import Contact from './pages/Contact';
@@ -26,7 +26,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/investors" element={<Investors />} />
+
           <Route path="/news" element={<News />} />
           <Route path="/press" element={<Press />} />
           <Route path="/contact" element={<Contact />} />

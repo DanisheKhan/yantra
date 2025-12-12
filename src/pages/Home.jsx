@@ -43,9 +43,6 @@ const Home = () => {
           <InteractiveHoverButton onClick={() => navigate('/projects')} className="w-64">
             Explore Projects
           </InteractiveHoverButton>
-          <InteractiveHoverButton onClick={() => navigate('/investors')} className="w-64">
-            For Investors
-          </InteractiveHoverButton>
           <InteractiveHoverButton onClick={() => navigate('/contact')} className="w-64">
             Get in Touch
           </InteractiveHoverButton>
