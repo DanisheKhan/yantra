@@ -17,7 +17,7 @@ const Projects = () => {
         </p>
       </div>
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px]">
         {projects.map((project, index) => (
           <BentoGridItem key={index} project={project} index={index} />
         ))}
@@ -41,22 +41,15 @@ const Projects = () => {
 
 const BentoGridItem = ({ project, index }) => {
   const getGridClass = (i) => {
-    // Pattern for 4-column grid
-    // 0: Big item (2x2)
-    // 1, 2: Stacked next to it? Or flowing.
-    // Let's force a nice layouts
-    const classes = [
-      "md:col-span-2 md:row-span-2", // 0: Large feature
-      "md:col-span-1 md:row-span-1", // 1
-      "md:col-span-1 md:row-span-1", // 2
-      "md:col-span-2 md:row-span-1", // 3: Wide
-      "md:col-span-1 md:row-span-1", // 4
-      "md:col-span-1 md:row-span-2", // 5: Tall
-      "md:col-span-2 md:row-span-2", // 6: Large feature
-      "md:col-span-2 md:row-span-1", // 7
-      "md:col-span-2 md:row-span-1", // 8
+    // Optimized pattern for 3-column grid that repeats every 5 items
+    const pattern = [
+      "md:col-span-2 md:row-span-2", // 0: Large (2x2)
+      "md:col-span-1 md:row-span-1", // 1: Small (1x1)
+      "md:col-span-1 md:row-span-1", // 2: Small (1x1)
+      "md:col-span-1 md:row-span-2", // 3: Tall (1x2)
+      "md:col-span-2 md:row-span-1", // 4: Wide (2x1)
     ];
-    return classes[i % classes.length] || "md:col-span-1 md:row-span-1";
+    return pattern[i % pattern.length];
   };
 
   return (
