@@ -130,41 +130,53 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Vision */}
                 <SlideIn delay={0.2}>
-                  <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group h-full">
-                      <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                          <Target className="w-6 h-6 text-gray-700 group-hover:text-white" />
+                  <motion.div 
+                      whileHover={{ y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full"
+                  >
+                      <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                          <Target className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors duration-300" />
                       </div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Vision</h3>
                       <p className="text-gray-600 leading-relaxed">
                           To become a global nexus for storytelling, where diverse narratives find their voice and reach audiences across the world without compromise.
                       </p>
-                  </div>
+                  </motion.div>
                 </SlideIn>
 
                 {/* Mission */}
                 <SlideIn delay={0.3}>
-                  <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group h-full">
-                       <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                          <Lightbulb className="w-6 h-6 text-gray-700 group-hover:text-white" />
+                  <motion.div 
+                      whileHover={{ y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full"
+                  >
+                       <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                          <Lightbulb className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors duration-300" />
                       </div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Mission</h3>
                       <p className="text-gray-600 leading-relaxed">
                           Unearthing stories with a soul and presenting them with cinematic excellence. We strive to push the boundaries of creativity and technology.
                       </p>
-                  </div>
+                  </motion.div>
                 </SlideIn>
 
                 {/* Values */}
                 <SlideIn delay={0.4}>
-                  <div className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group h-full">
-                       <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors">
-                          <Users className="w-6 h-6 text-gray-700 group-hover:text-white" />
+                  <motion.div 
+                      whileHover={{ y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full"
+                  >
+                       <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                          <Users className="w-6 h-6 text-gray-700 group-hover:text-white transition-colors duration-300" />
                       </div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Values</h3>
                       <p className="text-gray-600 leading-relaxed">
                           Collaboration, integrity, and a relentless pursuit of quality. We believe in the power of shared creativity to change perspectives.
                       </p>
-                  </div>
+                  </motion.div>
                 </SlideIn>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Globe } from "../components/ui/globe";
 import { SpinningText } from "../components/ui/spinning-text";
 import { MaskContainer } from "../components/ui/svg-mask-effect";
@@ -82,10 +83,14 @@ const Services = () => {
                         { icon: GlobeIcon, label: "Documentaries" },
                     ].map((item, idx) => (
                         <SlideIn key={idx} delay={0.1 * idx} direction="up">
-                          <div className="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors border border-gray-100 h-full">
+                          <motion.div 
+                              whileHover={{ y: -5 }}
+                              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                              className="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 h-full"
+                          >
                               <item.icon className="w-8 h-8 mb-3 text-gray-700" strokeWidth={1.5} />
                               <span className="text-sm font-medium text-gray-900 text-center">{item.label}</span>
-                          </div>
+                          </motion.div>
                         </SlideIn>
                     ))}
                 </div>
@@ -107,41 +112,53 @@ const Services = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Card 1 */}
                 <SlideIn delay={0.2}>
-                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden h-full">
-                      <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
-                          <Clapperboard className="w-6 h-6" />
+                  <motion.div 
+                      whileHover={{ y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group relative overflow-hidden h-full"
+                  >
+                      <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300 relative z-10">
+                          <Clapperboard className="w-6 h-6 transition-colors duration-300" />
                       </div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">In-House Production</h3>
                       <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
                           Complete project execution from concept to final output. We handle every aspect of the physical workspace and creative process.
                       </p>
-                  </div>
+                  </motion.div>
                 </SlideIn>
 
                 {/* Card 2 */}
                 <SlideIn delay={0.3}>
-                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden h-full">
-                       <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
-                          <Handshake className="w-6 h-6" />
+                  <motion.div 
+                      whileHover={{ y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group relative overflow-hidden h-full"
+                  >
+                       <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300 relative z-10">
+                          <Handshake className="w-6 h-6 transition-colors duration-300" />
                       </div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Acquisitions</h3>
                       <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
                           Buying or partnering on promising content. We identify high-potential projects and bring them into the Yantra ecosystem.
                       </p>
-                  </div>
+                  </motion.div>
                 </SlideIn>
 
                 {/* Card 3 */}
                 <SlideIn delay={0.4}>
-                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group relative overflow-hidden h-full">
-                       <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors relative z-10">
-                          <Users className="w-6 h-6" />
+                  <motion.div 
+                      whileHover={{ y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group relative overflow-hidden h-full"
+                  >
+                       <div className="h-12 w-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300 relative z-10">
+                          <Users className="w-6 h-6 transition-colors duration-300" />
                       </div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Co-Production</h3>
                       <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
                           Collaborating with other studios or creators to share creative and financial responsibilities, fostering global storytelling.
                       </p>
-                  </div>
+                  </motion.div>
                 </SlideIn>
             </div>
         </div>

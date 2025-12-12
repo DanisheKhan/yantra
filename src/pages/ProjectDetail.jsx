@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { InteractiveHoverButton } from '../components/ui/interactive-hover-button';
 import { projects } from '../data/projects';
 
@@ -75,14 +76,22 @@ const ProjectDetail = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-foreground uppercase tracking-wider">Impact & Recognition</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-xl p-8 rounded-2xl border border-neutral-200 dark:border-white/5 shadow-lg">
+              <motion.div 
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-xl p-8 rounded-2xl border border-neutral-200 dark:border-white/5 shadow-lg"
+              >
                 <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-2">Award Winner</h3>
                 <p className="font-semibold text-xl text-foreground">Best Picture - Local Fest</p>
-              </div>
-              <div className="bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-xl p-8 rounded-2xl border border-neutral-200 dark:border-white/5 shadow-lg">
+              </motion.div>
+              <motion.div 
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-xl p-8 rounded-2xl border border-neutral-200 dark:border-white/5 shadow-lg"
+              >
                 <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-2">Critical Acclaim</h3>
                 <p className="font-semibold text-xl text-foreground">4.5/5 Critic Score</p>
-              </div>
+              </motion.div>
             </div>
           </section>
         </div>
@@ -90,7 +99,11 @@ const ProjectDetail = () => {
         {/* Sidebar */}
         <div className="lg:col-span-4 relative">
           <div className="sticky top-32 space-y-8">
-            <div className="bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-xl p-8 rounded-2xl border border-neutral-200 dark:border-white/5 shadow-2xl">
+            <motion.div 
+              whileHover={{ y: -5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-xl p-8 rounded-2xl border border-neutral-200 dark:border-white/5 shadow-2xl"
+            >
               <h3 className="text-xl font-bold text-foreground mb-8 uppercase tracking-widest border-b border-neutral-200 dark:border-white/10 pb-4">
                 Project Details
               </h3>
@@ -101,7 +114,7 @@ const ProjectDetail = () => {
                 <DetailRow label="Our Role" value={project.role} highlight />
                 <DetailRow label="Year" value={project.year} />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
