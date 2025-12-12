@@ -4,7 +4,6 @@ import AboutSection from '../components/About';
 import Gallery from '../components/Gallery';
 import { useNavigate } from 'react-router-dom';
 import { InteractiveHoverButton } from '../components/ui/interactive-hover-button';
-import { SpinningText } from "../components/ui/spinning-text";
 import { MaskContainer } from "../components/ui/svg-mask-effect";
 import { Clapperboard, Globe, Trophy, Users } from "lucide-react";
 
@@ -14,20 +13,7 @@ const Home = () => {
   return (
     <div className="w-full bg-gray-50 overflow-x-hidden">
       
-      {/* Hero Wrapper with Spinning Text */}
-      <div className="relative w-full">
-        <Hero />
-        <div className="absolute top-24 right-10 md:top-32 md:right-20 z-20 hidden md:block opacity-60 mix-blend-difference">
-           <SpinningText
-            radius={5}
-            className="font-mono text-sm font-medium tracking-widest text-white"
-            duration={12}
-            reverse
-          >
-            YANTRA • EXPERIMENTAL • CINEMA • 
-          </SpinningText>
-        </div>
-      </div>
+      <Hero />
 
       <AboutSection />
       
