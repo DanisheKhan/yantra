@@ -37,7 +37,8 @@ function App() {
             <Route path="/client-hub" element={<PageTransition><ClientHub /></PageTransition>} />
           </Routes>
         </AnimatePresence>
-        <Footer />
+        <Footer /> 
+        
         <ScrollToTopButton />
       </div>
     </>
